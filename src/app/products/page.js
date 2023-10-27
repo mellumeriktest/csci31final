@@ -8,8 +8,8 @@ export default function About() {
     <div>
       <Navbar />
       <div className="m-12">
-        <PageTitle title="Products" />
-        <PageContent content="Our products are the best" />
+        <PageTitle title="Products"
+        <PageContent content="Our products are the best"
       </div>
     </div>
   )
