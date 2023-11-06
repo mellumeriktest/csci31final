@@ -8,7 +8,7 @@ import { createClient } from '@supabase/supabase-js'
 const SUPABASE_URL = 'https://bzcrkwdrpftktwtohvsw.supabase.co'
 const SUPABASE_CARDS_TABLE = 'cards'
 // Create a single supabase client for interacting with your database
-const supabase = createClient(SUPABASE_URL, process.env.SUPABASE_SECRET)
+const supabase = createClient(SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY)
 
 export default async function Home() {
   const { data: cards, error } = await supabase.from(SUPABASE_CARDS_TABLE).select()
