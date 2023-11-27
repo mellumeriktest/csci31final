@@ -1,7 +1,9 @@
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import { Theme, ThemePanel } from '@radix-ui/themes'
 
 import './globals.css'
+import '@radix-ui/themes/styles.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,7 +15,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gradient-to-r from-emerald-600 to-emerald-800`}>{children}</body>
+      <Theme appearance="light" accentColor="jade" grayColor="mauve">
+        <body className={`${inter.className} bg-gradient-to-r from-emerald-600 to-emerald-800`}>{children}</body>
+        {/* <ThemePanel /> */}
+      </Theme>
       <Analytics />
     </html>
   )
